@@ -64,6 +64,20 @@ a {
 /* Helper Classes */
 .container{}
 
+.filled-btn {
+  --btn-clr: var(--c-yellow);
+  padding: .225em 0.625em;
+  border: 2px solid var(--btn-clr);
+  background-image: linear-gradient(to right, var(--c-yellow) 50%, transparent 50%);
+  background-size: 200%;
+  background-position: left center;
+  border-radius: 10px;
+}
+
+.filled-btn {
+  background-position: right center;
+}
+
 /* ========== Navigation ========== */
 nav {
   background-color: var(--c-dark-grey);
@@ -83,9 +97,11 @@ nav {
 }
 
 .nav-sections {
+  display: flex;
 }
 
 .login-options {
+  display: flex;
 }
 
 .right-side {
@@ -115,13 +131,38 @@ nav {
 }
 
 /* ========== Media Queries ========== */
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   /* ========== Navigation ========== */
   .nav-menu {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-right: 3.375rem;
   }
 
   .mobile-nav-toggle {
     display: none;
+  }
+
+  .nav-sections {
+    margin-left: auto;
+    gap: 2.75rem;
+  }
+  
+  .nav-sections a {
+    color: var(--c-text-white);
+  }
+  
+  .login-options {
+    margin-left: auto;
+    gap: 1.5rem;
+  }
+  
+  .login-options a{
+    color: var(--c-text-white);
+  }
+
+  .login-options .filled-btn {
+    color: #000;
   }
 }
