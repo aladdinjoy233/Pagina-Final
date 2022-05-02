@@ -62,20 +62,24 @@ a {
 }
 
 /* Helper Classes */
-.container{}
+.container{
+  max-width: 102.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .filled-btn {
   --btn-clr: var(--c-yellow);
   padding: .225em 0.625em;
   border: 2px solid var(--btn-clr);
-  background-image: linear-gradient(to right, var(--c-yellow) 50%, transparent 50%);
-  background-size: 200%;
-  background-position: left center;
+  background-color: var(--c-yellow);
   border-radius: 10px;
+  transition: background-color 100ms ease, color 100ms ease;
 }
 
-.filled-btn {
-  background-position: right center;
+.filled-btn:hover {
+  background-color: transparent;
+  color: var(--c-text-white);
 }
 
 /* ========== Navigation ========== */
@@ -86,6 +90,7 @@ nav {
   align-items: center;
   height: 5.875rem;
   padding: 0 1.875rem;
+  position: relative;
 }
 
 .nav-logo {
@@ -93,15 +98,85 @@ nav {
 }
 
 .nav-menu {
-  display: none;
+  display: flex;
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-text-white);
+  gap: 5rem;
+  clip-path: circle(0% at 91.5% 7.5%);
+  transition: clip-path .5s ease, visibility 2s;
+}
+
+.nav-menu a:not(.filled-btn):hover {
+  opacity: 0.65;
+}
+
+nav.open .nav-menu {
+  visibility: visible;
+  clip-path: circle(200% at 91.5% 7.5%);
+  transition: clip-path 1.5s ease, visibility 2s;
+}
+
+nav.open .mobile-nav-toggle div {
+  background-color: #000;
+  transition: all 350ms ease;
+}
+
+nav.open .mobile-nav-toggle .top {
+  transform: rotate(45deg) translate(-1px, -2px);
+}
+
+nav.open .mobile-nav-toggle .mid {
+  opacity: 0;
+}
+
+nav.open .mobile-nav-toggle .bot {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.nav-sections,
+.login-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-sections {
-  display: flex;
+  position: relative;
 }
 
-.login-options {
-  display: flex;
+.nav-sections::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 25%;
+  background-color: var(--c-black);
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -.25rem;
+  width: 100%;
+  height: 2px;
+  background-color: black;
 }
 
 .right-side {
@@ -121,6 +196,8 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  z-index: 100;
 }
 
 .mobile-nav-toggle div {
@@ -128,19 +205,54 @@ nav {
   height: 2px;
   background-color: white;
   border-radius: 5rem;
+  transition: all 1s ease;
+}
+
+.top {
+  transform: rotate(0deg) translate(0, 0);
+  transform-origin: top left;
+}
+
+.mid {
+  opacity: 1;
+}
+
+.bot {
+  transform: rotate(0deg);
+  transform-origin: bottom left;
+}
+
+/* ========== Header Section ========== */
+header {
+  height: 100%;
 }
 
 /* ========== Media Queries ========== */
-@media (min-width: 640px) {
+@media (min-width: 44.625rem) {
   /* ========== Navigation ========== */
   .nav-menu {
     display: flex;
+    visibility: visible;
+    clip-path: none;
+    position: initial;
     width: 100%;
     justify-content: center;
     margin-right: 3.375rem;
+    background-color: initial;
+    height: 100%;
+    flex-direction: row;
   }
 
   .mobile-nav-toggle {
+    display: none;
+  }
+
+  .nav-sections,
+  .login-options {
+    flex-direction: row;
+  }
+
+  .nav-sections::after {
     display: none;
   }
 
@@ -148,21 +260,32 @@ nav {
     margin-left: auto;
     gap: 2.75rem;
   }
-  
-  .nav-sections a {
+
+  .nav-sections a,
+  .login-options a {
     color: var(--c-text-white);
+    /* font-size: 1.25rem; */
+  }
+
+  a.active {
+    color: var(--c-yellow);
+  }
+
+  .active::after {
+    background-color: var(--c-yellow);
+    bottom: -2.25rem;
   }
   
   .login-options {
     margin-left: auto;
     gap: 1.5rem;
   }
-  
-  .login-options a{
-    color: var(--c-text-white);
-  }
 
   .login-options .filled-btn {
     color: #000;
+  }
+
+  .login-options .filled-btn:hover {
+    color: var(--c-text-white);
   }
 }
