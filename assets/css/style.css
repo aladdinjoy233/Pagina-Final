@@ -9,8 +9,9 @@
   --c-dark-grey: #1E1E1E;
   --c-black: #000;
 
-  --c-text-grey-1: #989898;
-  --c-text-grey-2: #5F5E63;
+  --c-text-grey-1: #ACACAC;
+  --c-text-grey-2: #989898;
+  --c-text-grey-3: #5F5E63;
   --c-text-white: #fff;
 
 
@@ -47,6 +48,18 @@ body {
   font-family: var(--ff-sans);
 }
 
+h1, h2 {
+  font-family: var(--ff-serif);
+}
+
+h1 {
+  font-weight: var(--fw-black);
+}
+
+h2 {
+  font-weight: var(--fw-bold);
+}
+
 img {
   width: 100%;
   height: auto;
@@ -66,15 +79,20 @@ a {
   max-width: 102.5rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1.875rem;
+}
+
+.filled-btn,
+.outline-btn {
+  padding: .225em 0.625em;
+  border: 2px solid var(--btn-clr);
+  border-radius: 10px;
+  transition: 150ms ease;
 }
 
 .filled-btn {
   --btn-clr: var(--c-yellow);
-  padding: .225em 0.625em;
-  border: 2px solid var(--btn-clr);
   background-color: var(--c-yellow);
-  border-radius: 10px;
-  transition: background-color 100ms ease, color 100ms ease;
 }
 
 .filled-btn:hover {
@@ -82,9 +100,18 @@ a {
   color: var(--c-text-white);
 }
 
+.outline-btn {
+  --btn-clr: var(--c-text-white);
+  color: var(--btn-clr);
+}
+
+.outline-btn:hover {
+  background-color: var(--btn-clr);
+  color: var(--c-text-grey-3);
+}
+
 /* ========== Navigation ========== */
 nav {
-  background-color: var(--c-dark-grey);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,10 +135,13 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--c-text-white);
+  /* background-color: var(--c-text-white); */
+  background-color: rgba(255,255,255,0.75);
+  backdrop-filter: blur(1rem);
   gap: 5rem;
   clip-path: circle(0% at 91.5% 7.5%);
   transition: clip-path .5s ease, visibility 2s;
+  z-index: 100;
 }
 
 .nav-menu a:not(.filled-btn):hover {
@@ -222,13 +252,82 @@ nav.open .mobile-nav-toggle .bot {
   transform-origin: bottom left;
 }
 
-/* ========== Header Section ========== */
+/* ========== Main Section ========== */
 header {
-  height: 100%;
+  /* height: 100vh; */
+  background-image: linear-gradient(to bottom right, var(--c-gradient-left), var(--c-gradient-right));
 }
 
+main {
+  --section-clr: var(--c-text-grey-1);
+  color: var(--section-clr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .laptop-img {
+  width: 17rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+main .laptop-img img {
+  filter: drop-shadow(8px 11px 15px rgba(0,0,0,0.25));
+}
+
+main .laptop-img::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--c-yellow);
+}
+
+main .desc {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+main .desc h2{
+  font-size: 1.5rem;
+  margin-bottom: -2rem;
+}
+
+main .desc h1{
+  font-size: 5rem;
+  color: var(--c-yellow);
+}
+
+main .desc p {
+  margin-top: -.5rem;
+}
+
+main .desc .btn-group {
+  margin-top: 1.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+main .desc .btn-group a {
+  width: 8rem;
+}
+
+
+
 /* ========== Media Queries ========== */
+/* - Navigation */
 @media (min-width: 44.625rem) {
+
   /* ========== Navigation ========== */
   .nav-menu {
     display: flex;
@@ -239,6 +338,7 @@ header {
     justify-content: center;
     margin-right: 3.375rem;
     background-color: initial;
+    backdrop-filter: initial;
     height: 100%;
     flex-direction: row;
   }
@@ -287,5 +387,13 @@ header {
 
   .login-options .filled-btn:hover {
     color: var(--c-text-white);
+  }
+}
+
+/* - Container */
+@media (min-width: 102.5rem) {
+  /* Helper */
+  .container {
+    padding: 0;
   }
 }
