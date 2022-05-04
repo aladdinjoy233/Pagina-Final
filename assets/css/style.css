@@ -46,6 +46,8 @@
 
 body {
   font-family: var(--ff-sans);
+  background-color: #F3F4EE;
+  overflow: hidden;
 }
 
 h1, h2 {
@@ -118,6 +120,7 @@ nav {
   height: 5.875rem;
   padding: 0 1.875rem;
   position: relative;
+  z-index: 15;
 }
 
 .nav-logo {
@@ -308,6 +311,7 @@ main .desc h1{
 
 main .desc p {
   margin-top: -.5rem;
+  max-width: 32rem;
 }
 
 main .desc .btn-group {
@@ -325,7 +329,9 @@ main .desc .btn-group a {
 
 
 /* ========== Media Queries ========== */
+/* == Small Laptop / Tablet == */
 /* - Navigation */
+/* - Main Section */
 @media (min-width: 44.625rem) {
 
   /* ========== Navigation ========== */
@@ -373,7 +379,7 @@ main .desc .btn-group a {
 
   .active::after {
     background-color: var(--c-yellow);
-    bottom: -2.25rem;
+    bottom: -1rem;
   }
   
   .login-options {
@@ -388,6 +394,59 @@ main .desc .btn-group a {
   .login-options .filled-btn:hover {
     color: var(--c-text-white);
   }
+
+  /* ========== Main Section ========== */
+  header {
+    position: relative;
+  }
+
+  main {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 35%;
+    background-image: linear-gradient(to right, transparent, rgba(2 2 2 / 90%));
+    z-index: 10;
+  }
+
+  main .laptop-img {
+    width: 100%;
+    max-width: 74rem;
+    margin-right: -10rem;
+  }
+
+  main .laptop-img::before {
+    display: none;
+  }
+
+  main .desc {
+    text-align: left;
+  }
+
+  main .desc h2 {
+    font-size: 2rem;
+    margin-bottom: -1rem;
+  }
+
+  main .desc h1 {
+    font-size: 5rem;
+  }
+
+  main .desc .btn-group {
+    justify-content: flex-start;
+  }
+
+  main .desc .btn-group a {
+    text-align: center;
+    width: 10rem;
+  }
 }
 
 /* - Container */
@@ -395,5 +454,29 @@ main .desc .btn-group a {
   /* Helper */
   .container {
     padding: 0;
+  }
+}
+
+/* == Small Desktop == */
+/* - Main Section */
+@media (min-width: 75rem) {
+  header {
+    height: 100vh;
+  }
+
+  main {
+    height: calc(100vh - 5.875rem);
+    position: relative;
+    bottom: 0;
+  }
+
+  main .desc h2 {
+    font-size: 2rem;
+    margin-bottom: -2rem;
+  }
+  
+
+  main .desc h1 {
+    font-size: 10rem;
   }
 }
