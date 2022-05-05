@@ -378,12 +378,12 @@ main .desc .btn-group .outline-btn {
   --clr-d: var(--c-text-grey-3);
 }
 
-/* ========== Fridge Section ========== */
+/* ========== Phone Section ========== */
 .phone-section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 5.625rem;
+  padding-bottom: 14.5rem;
   background-image: linear-gradient(to bottom right, var(--c-gradient-left), var(--c-gradient-right));
 }
 
@@ -405,6 +405,27 @@ main .desc .btn-group .outline-btn {
 
 .phone-section .desc h2 span {
   color: var(--c-yellow);
+}
+
+/* ========== Game Section ========== */
+.game-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 6rem;
+}
+
+.game-section .game-img {
+  width: 21.25rem;
+  margin-top: -8rem;
+}
+
+.game-section .game-img img {
+  filter: drop-shadow(-6px 29px 35px rgba(0,0,0,0.25));
+}
+
+.game-section .desc {
+  --clr-d: var(--c-text-grey-3);
 }
 
 
