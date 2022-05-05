@@ -13,6 +13,7 @@
   --c-text-grey-2: #989898;
   --c-text-grey-3: #5F5E63;
   --c-text-white: #fff;
+  --c-text-light: #F1F2EC;
 
 
   --c-bg-light: #F3F4EE;
@@ -47,7 +48,7 @@
 body {
   font-family: var(--ff-sans);
   background-color: #F3F4EE;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -90,6 +91,7 @@ a {
   border: 2px solid var(--btn-clr);
   border-radius: 10px;
   transition: 150ms ease;
+  display: inline-block;
 }
 
 .filled-btn {
@@ -110,6 +112,30 @@ a {
 .outline-btn:hover {
   background-color: var(--btn-clr);
   color: var(--c-text-grey-3);
+}
+
+.desc {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc h2 {
+  font-size: 5rem;
+  font-weight: var(--fw-black);
+  line-height: 5.25rem;
+  color: var(--clr-d);
+}
+
+.desc p {
+  color: var(--clr-d);
+  margin-top: 1.5rem;
+}
+
+.desc .outline-btn {
+  --btn-clr: var(--clr-d);
+  margin-top: 1.25rem;
 }
 
 /* ========== Navigation ========== */
@@ -294,14 +320,17 @@ main .laptop-img::before {
 }
 
 main .desc {
+  --clr-d: var(--c-text-grey-1);
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
 
 main .desc h2{
+  font-weight: var(--fw-bold);
   font-size: 1.5rem;
   margin-bottom: -2rem;
+  line-height: initial;
 }
 
 main .desc h1{
@@ -323,7 +352,59 @@ main .desc .btn-group {
 }
 
 main .desc .btn-group a {
+  margin-top: 0;
   width: 8rem;
+}
+
+main .desc .btn-group .outline-btn {
+  --clr-d: var(--c-text-light);
+}
+
+/* ========== Fridge Section ========== */
+.fridge-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5rem;
+  padding-bottom: 14.5rem;
+}
+
+.fridge-section .fridge-img {
+  width: 11.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.fridge-section .desc {
+  --clr-d: var(--c-text-grey-3);
+}
+
+/* ========== Fridge Section ========== */
+.phone-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5.625rem;
+  background-image: linear-gradient(to bottom right, var(--c-gradient-left), var(--c-gradient-right));
+}
+
+.phone-section .phone-img {
+  width: 12.375rem;
+  margin-top: -8rem;
+  margin-bottom: 1.5rem;
+}
+
+.phone-section .desc {
+  --clr-d: var(--c-text-light);
+}
+
+.phone-section .desc h2 {
+  font-size: 4rem;
+  max-width: 19rem;
+  line-height: 3.625rem;
+}
+
+.phone-section .desc h2 span {
+  color: var(--c-yellow);
 }
 
 
