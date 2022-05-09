@@ -39,6 +39,29 @@
 }
 
 /* Global Styles */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--c-gradient-left);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--c-yellow);
+  border-radius: 10rem;
+  transition: 250ms ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -79,7 +102,7 @@ a {
 
 /* Helper Classes */
 .container{
-  max-width: 102.5rem;
+  max-width: 72.5rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.875rem;
@@ -428,6 +451,31 @@ main .desc .btn-group .outline-btn {
   --clr-d: var(--c-text-grey-3);
 }
 
+/* ========== Testimonials Section ========== */
+.testimonials-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 6rem;
+}
+
+.testimonials-section .desc {
+  --clr-d: var(--c-text-grey-3);
+  margin-bottom: 4rem;
+}
+
+.testimonials-section .desc h2 {
+  font-size: 4rem;
+  line-height: 3.625rem;
+}
+
+.testimonials-section .carousel {
+  height: 15rem;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+}
 
 
 /* ========== Media Queries ========== */
@@ -522,6 +570,7 @@ main .desc .btn-group .outline-btn {
     width: 100%;
     max-width: 74rem;
     margin-right: -10rem;
+    margin-top: 0;
   }
 
   main .laptop-img::before {
@@ -529,7 +578,9 @@ main .desc .btn-group .outline-btn {
   }
 
   main .desc {
+    margin-top: 0;
     text-align: left;
+    align-items: flex-start;
   }
 
   main .desc h2 {
@@ -548,6 +599,131 @@ main .desc .btn-group .outline-btn {
   main .desc .btn-group a {
     text-align: center;
     width: 10rem;
+  }
+
+  /* Content Section */
+
+  .page-content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-content::before {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -40rem;
+    width: 325rem;
+    /* height: 59rem; */
+    height: 62rem;
+    background-image: linear-gradient(to bottom right, var(--c-gradient-left), var(--c-gradient-right));
+    transform: rotate(45deg);
+    transform-origin: top left;
+    z-index: -10;
+  }
+
+  .fridge-section,
+  .phone-section,
+  .game-section {
+    flex-direction: row;
+    padding-top: initial;
+    padding-bottom: initial;
+    height: 110vh;
+    justify-content: space-between;
+  }
+
+  .fridge-section .desc h2,
+  .phone-section .desc h2,
+  .game-section .desc h2 {
+    font-size: 6.5rem;
+    line-height: 100px;
+  }
+
+  /* ========== Fridge Section ========== */
+  .fridge-section .desc {
+    align-items: flex-end;
+    text-align: right;
+    max-width: 35rem;
+  }
+
+  .fridge-section .desc h2 {
+    max-width: 30rem;
+  }
+
+  .fridge-section .fridge-img {
+    width: 27rem;
+    margin-left: -11rem;
+    margin-bottom: initial;
+  }
+
+  /* ========== Phone Section ========== */
+  .phone-section {
+    flex-direction: row-reverse;
+    background-image: initial;
+  }
+
+  .phone-section .desc {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 35rem;
+  }
+
+  .phone-section .desc h2 {
+    max-width: 35rem;
+  }
+
+  .phone-section .phone-img {
+    margin-top: initial;
+    margin-bottom: initial;
+    width: 22rem;
+    margin-right: -10rem;
+  }
+
+  /* ========== Game Section ========== */
+  .game-section .desc {
+    --clr-d: var(--c-text-light);
+    align-items: flex-end;
+    text-align: right;
+    max-width: 35rem;
+  }
+
+  .game-section .desc h2 {
+    max-width: 30rem;
+  }
+
+  .game-section .game-img {
+    margin-top: initial;
+    margin-bottom: initial;
+    width: 75rem;
+    margin-left: -55rem;
+  }
+
+  /* ========== Testimonials ========== */
+  .testimonials-section .desc h2 {
+    font-size: 4rem;
+    max-width: 40rem;
+    line-height: 70px;
+  }
+}
+
+@media (min-width: 56rem) {
+  .page-content::before {
+    top: 0;
+    left: -20rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .page-content::before {
+    top: 0;
+    left: -13rem;
+  }
+}
+
+@media (min-width: 140rem) {
+  .page-content::before {
+    top: -13rem;
+    left: -25rem;
   }
 }
 
