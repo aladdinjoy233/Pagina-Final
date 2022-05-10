@@ -308,6 +308,7 @@ nav.open .mobile-nav-toggle .bot {
 header {
   /* height: 100vh; */
   background-image: linear-gradient(to bottom right, var(--c-gradient-left), var(--c-gradient-right));
+  overflow: hidden;
 }
 
 main {
@@ -384,6 +385,12 @@ main .desc .btn-group .outline-btn {
 }
 
 /* ========== Fridge Section ========== */
+.fridge-section .fridge-img img,
+.phone-section .phone-img img,
+.game-section .game-img img {
+  filter: drop-shadow(-6px 29px 35px rgba(0,0,0,0.25));
+}
+
 .fridge-section {
   display: flex;
   align-items: center;
@@ -443,10 +450,6 @@ main .desc .btn-group .outline-btn {
   margin-top: -8rem;
 }
 
-.game-section .game-img img {
-  filter: drop-shadow(-6px 29px 35px rgba(0,0,0,0.25));
-}
-
 .game-section .desc {
   --clr-d: var(--c-text-grey-3);
 }
@@ -475,6 +478,16 @@ main .desc .btn-group .outline-btn {
   display: grid;
   place-items: center;
   background-color: #fff;
+}
+
+/* ========== Contact Section ========== */
+.contact-section {
+  background-color: #2E2E2E;
+}
+
+.contact-section h2 {
+  color: var(--c-text-light);
+  text-align: center;
 }
 
 
@@ -584,7 +597,7 @@ main .desc .btn-group .outline-btn {
   }
 
   main .desc h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: -1rem;
   }
 
@@ -611,8 +624,8 @@ main .desc .btn-group .outline-btn {
   .page-content::before {
     content: "";
     position: absolute;
-    top: -10rem;
-    left: -40rem;
+    top: 0rem;
+    left: -9rem;
     width: 325rem;
     /* height: 59rem; */
     height: 62rem;
@@ -626,24 +639,30 @@ main .desc .btn-group .outline-btn {
   .phone-section,
   .game-section {
     flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
     padding-top: initial;
     padding-bottom: initial;
-    height: 110vh;
-    justify-content: space-between;
+    /* height: 110vh; */
+  }
+
+  .fridge-section .desc,
+  .phone-section .desc,
+  .game-section .desc {
+    max-width: 28rem;
   }
 
   .fridge-section .desc h2,
   .phone-section .desc h2,
   .game-section .desc h2 {
-    font-size: 6.5rem;
-    line-height: 100px;
+    font-size: 4.5rem;
+    line-height: 60px;
   }
 
   /* ========== Fridge Section ========== */
   .fridge-section .desc {
     align-items: flex-end;
     text-align: right;
-    max-width: 35rem;
   }
 
   .fridge-section .desc h2 {
@@ -665,7 +684,6 @@ main .desc .btn-group .outline-btn {
   .phone-section .desc {
     align-items: flex-start;
     text-align: left;
-    max-width: 35rem;
   }
 
   .phone-section .desc h2 {
@@ -684,7 +702,6 @@ main .desc .btn-group .outline-btn {
     --clr-d: var(--c-text-light);
     align-items: flex-end;
     text-align: right;
-    max-width: 35rem;
   }
 
   .game-section .desc h2 {
@@ -706,24 +723,50 @@ main .desc .btn-group .outline-btn {
   }
 }
 
-@media (min-width: 56rem) {
+/* X -Diagonal */
+@media (min-width: 46.875rem) {
   .page-content::before {
     top: 0;
-    left: -20rem;
+    left: -16rem;
   }
 }
 
+/* X -Diagonal */
+@media (min-width: 60rem) {
+  .page-content::before {
+    top: 0;
+    left: -6rem;
+  }
+}
+
+/* X -Diagonal */
 @media (min-width: 75rem) {
   .page-content::before {
-    top: 0;
-    left: -13rem;
+    top: -10rem;
+    left: -5rem;
   }
 }
 
-@media (min-width: 140rem) {
+/* X -Diagonal */
+@media (min-width: 101rem) {
   .page-content::before {
-    top: -13rem;
-    left: -25rem;
+    top: -10rem;
+    left: 8rem;
+  }
+}
+
+/* X -Diagonal */
+@media (min-width: 126rem) {
+  .page-content::before {
+    top: -20rem;
+    left: 16rem;
+  }
+}
+/* X -Diagonal */
+@media (min-width: 162.5rem) {
+  .page-content::before {
+    top: -25rem;
+    left: 25rem;
   }
 }
 
@@ -756,5 +799,20 @@ main .desc .btn-group .outline-btn {
 
   main .desc h1 {
     font-size: 10rem;
+  }
+}
+
+/* == Smaller - Mobile == */
+@media (max-width: 28.125rem) {
+  .fridge-section .desc h2,
+  .phone-section .desc h2,
+  .game-section .desc h2,
+  .testimonials-section .desc h2 {
+    font-size: 3rem;
+    line-height: 2.625rem;
+  }
+
+  .page-content {
+    overflow-x: hidden;
   }
 }
