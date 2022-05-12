@@ -62,7 +62,9 @@
   background: #555;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -74,7 +76,8 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--ff-serif);
 }
 
@@ -101,7 +104,7 @@ a {
 }
 
 /* Helper Classes */
-.container{
+.container {
   max-width: 72.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -188,7 +191,7 @@ nav {
   align-items: center;
   justify-content: center;
   /* background-color: var(--c-text-white); */
-  background-color: rgba(255,255,255,0.75);
+  background-color: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(1rem);
   gap: 5rem;
   clip-path: circle(0% at 91.5% 7.5%);
@@ -327,7 +330,7 @@ main .laptop-img {
 }
 
 main .laptop-img img {
-  filter: drop-shadow(8px 11px 15px rgba(0,0,0,0.25));
+  filter: drop-shadow(8px 11px 15px rgba(0, 0, 0, 0.25));
 }
 
 main .laptop-img::before {
@@ -350,14 +353,14 @@ main .desc {
   margin-bottom: 4rem;
 }
 
-main .desc h2{
+main .desc h2 {
   font-weight: var(--fw-bold);
   font-size: 1.5rem;
   margin-bottom: -2rem;
   line-height: initial;
 }
 
-main .desc h1{
+main .desc h1 {
   font-size: 5rem;
   color: var(--c-yellow);
 }
@@ -388,7 +391,7 @@ main .desc .btn-group .outline-btn {
 .fridge-section .fridge-img img,
 .phone-section .phone-img img,
 .game-section .game-img img {
-  filter: drop-shadow(-6px 29px 35px rgba(0,0,0,0.25));
+  filter: drop-shadow(-6px 29px 35px rgba(0, 0, 0, 0.25));
 }
 
 .fridge-section {
@@ -485,11 +488,142 @@ main .desc .btn-group .outline-btn {
   background-color: #2E2E2E;
 }
 
+.contact-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .contact-section h2 {
   color: var(--c-text-light);
   text-align: center;
+  font-size: 3.5rem;
+  font-weight: var(--fw-black);
+  margin-bottom: 1.5rem;
 }
 
+.contact-section form {
+  width: 100%;
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-section form label {
+  color: var(--c-text-light);
+  margin-bottom: 5px;
+}
+
+.contact-section form #email {
+  margin-bottom: 1.5rem;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #161616;
+  border: 1px solid #161616;
+  color: var(--c-text-light);
+  padding: .5rem;
+  border-radius: 7px;
+  font-family: var(--ff-sans);
+}
+
+.contact-section form input:focus-within,
+.contact-section form textarea:focus-within {
+  border: 1px solid var(--c-yellow);
+}
+
+.contact-section .filled-btn {
+  background-color: var(--c-yellow);
+  color: #000;
+  width: 5rem;
+  padding: .35rem .75rem;
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border: 2px solid var(--c-yellow);
+}
+
+.contact-section .filled-btn:hover {
+  background-color: transparent;
+  color: var(--c-text-light);
+}
+
+/* ========== Footer Section ========== */
+footer {
+  background-image: linear-gradient(to bottom, #171717, var(--c-gradient-right));
+}
+
+footer,
+footer .container a {
+  color: var(--c-text-light);
+  transition: 150ms ease;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+footer .container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  margin-bottom: 3.375rem;
+  gap: 1rem;
+}
+
+footer .container ul::after {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400%;
+  height: 2px;
+  background-color: #363636;
+}
+
+footer .rights-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .footer-other-links a:hover {
+  color: var(--c-yellow);
+}
+
+footer .footer-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  background-color: #1E1E1E;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+footer .footer-social-links a:hover {
+  background-color: #383838;
+  color: var(--c-yellow);
+}
 
 /* ========== Media Queries ========== */
 /* == Small Laptop / Tablet == */
@@ -544,7 +678,7 @@ main .desc .btn-group .outline-btn {
     background-color: var(--c-yellow);
     bottom: -1rem;
   }
-  
+
   .login-options {
     margin-left: auto;
     gap: 1.5rem;
@@ -762,6 +896,7 @@ main .desc .btn-group .outline-btn {
     left: 16rem;
   }
 }
+
 /* X -Diagonal */
 @media (min-width: 162.5rem) {
   .page-content::before {
@@ -772,6 +907,7 @@ main .desc .btn-group .outline-btn {
 
 /* - Container */
 @media (min-width: 102.5rem) {
+
   /* Helper */
   .container {
     padding: 0;
@@ -779,6 +915,65 @@ main .desc .btn-group .outline-btn {
 }
 
 /* == Small Desktop == */
+/* - Footer */
+@media (min-width: 53.125rem) {
+  footer {
+    background-image: linear-gradient(to bottom right, #171717, var(--c-gradient-right));
+  }
+
+  footer .container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas: "terms rights social";
+  }
+
+  footer .container ul {
+    margin-bottom: initial;
+    flex-direction: row;
+  }
+
+  footer .container ul::after {
+    display: none;
+  }
+
+  footer .footer-other-links {
+    grid-area: terms;
+  }
+
+  footer .rights-group {
+    grid-area: rights;
+    flex-direction: row;
+  }
+
+  footer .footer-social-links {
+    grid-area: social;
+  }
+
+  footer .footer-social-links a {
+    font-size: 1rem;
+  }
+
+  footer .footer-social-links a:hover {
+    transform: translateY(-5px);
+  }
+
+  footer .rights-group p:first-child {
+    /* background-color: red; */
+    position: relative;
+  }
+
+  footer .rights-group p:first-child::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -.55rem;
+    width: 2px;
+    height: 100%;
+    background-color: var(--c-text-light);
+    opacity: .50;
+  }
+}
+
 /* - Main Section */
 @media (min-width: 75rem) {
   header {
@@ -795,15 +990,17 @@ main .desc .btn-group .outline-btn {
     font-size: 2rem;
     margin-bottom: -2rem;
   }
-  
+
 
   main .desc h1 {
     font-size: 10rem;
   }
 }
 
+
 /* == Smaller - Mobile == */
 @media (max-width: 28.125rem) {
+
   .fridge-section .desc h2,
   .phone-section .desc h2,
   .game-section .desc h2,
@@ -814,5 +1011,23 @@ main .desc .btn-group .outline-btn {
 
   .page-content {
     overflow-x: hidden;
+  }
+}
+
+@media (max-width: 20rem) {
+
+  .game-section .game-img {
+    width: 15rem;
+    margin-top: -5rem;
+  }
+
+  .contact-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 17rem) {
+  main .desc .btn-group {
+    flex-direction: column;
   }
 }
