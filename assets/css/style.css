@@ -476,11 +476,61 @@ main .desc .btn-group .outline-btn {
 }
 
 .testimonials-section .carousel {
-  height: 15rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials-section .carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--c-text-grey-3);
+  color: var(--c-text-light);
+  cursor: pointer;
+}
+
+.testimonials-section .carousel-container {
+  width: 100%;
+  max-width: 40rem;
   display: grid;
   place-items: center;
-  background-color: #fff;
+  grid-template-areas: "mid";
+}
+
+.testimonials-section .carousel-card {
+  opacity: 0;
+  height: 15rem;
+  border-radius: 7px;
+  width: 33%;
+  transform: scale(.5) translateX(0);
+  transition: 500ms ease;
+  grid-area: mid;
+}
+
+.testimonials-section .carousel-card.left,
+.testimonials-section .carousel-card.middle,
+.testimonials-section .carousel-card.right {
+  opacity: 1;
+}
+
+.testimonials-section .carousel-card.left {
+  z-index: 10;
+  transform: scale(1) translateX(-10rem);
+}
+
+.testimonials-section .carousel-card.middle {
+  z-index: 100;
+  transform: scale(1.2) translateX(0);
+}
+
+.testimonials-section .carousel-card.right {
+  z-index: 10;
+  transform: scale(1) translateX(10rem);
 }
 
 /* ========== Contact Section ========== */
