@@ -387,13 +387,14 @@ main .desc .btn-group .outline-btn {
   --clr-d: var(--c-text-light);
 }
 
-/* ========== Fridge Section ========== */
+/* Content */
 .fridge-section .fridge-img img,
 .phone-section .phone-img img,
 .game-section .game-img img {
   filter: drop-shadow(-6px 29px 35px rgba(0, 0, 0, 0.25));
 }
 
+/* ========== Fridge Section ========== */
 .fridge-section {
   display: flex;
   align-items: center;
@@ -409,6 +410,10 @@ main .desc .btn-group .outline-btn {
 
 .fridge-section .desc {
   --clr-d: var(--c-text-grey-3);
+}
+
+.fridge-section .desc .outline-btn:hover {
+  color: var(--c-text-light);
 }
 
 /* ========== Phone Section ========== */
@@ -486,12 +491,15 @@ main .desc .btn-group .outline-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
+  min-width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   background-color: var(--c-text-grey-3);
   color: var(--c-text-light);
   cursor: pointer;
+
+  position: relative;
+  z-index: 1000;
 }
 
 .testimonials-section .carousel-container {
@@ -506,31 +514,72 @@ main .desc .btn-group .outline-btn {
   opacity: 0;
   height: 15rem;
   border-radius: 7px;
-  width: 33%;
+  /* width: 33%; */
+  width: 12rem;
   transform: scale(.5) translateX(0);
   transition: 500ms ease;
   grid-area: mid;
+  background-color: var(--c-text-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem .70rem;
 }
 
-.testimonials-section .carousel-card.left,
-.testimonials-section .carousel-card.middle,
-.testimonials-section .carousel-card.right {
-  opacity: 1;
+.card-header {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-header .card-img {
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.card-header .card-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-header .card-desc .card-name {
+  color: #5F5E63;
+}
+
+.card-header .card-desc .card-title {
+  color: #939198;
+  font-size: .75rem;
+}
+
+.card-content {
+  text-align: center;
+  font-size: .85rem;
+  color: #5F5E63;
 }
 
 .testimonials-section .carousel-card.left {
   z-index: 10;
   transform: scale(1) translateX(-10rem);
+  opacity: .80;
 }
 
 .testimonials-section .carousel-card.middle {
   z-index: 100;
   transform: scale(1.2) translateX(0);
+  box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 10%);
+  opacity: 1;
 }
 
 .testimonials-section .carousel-card.right {
   z-index: 10;
   transform: scale(1) translateX(10rem);
+  opacity: .80;
 }
 
 /* ========== Contact Section ========== */
