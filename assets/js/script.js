@@ -9,29 +9,11 @@ const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 const carouselContainer = document.querySelector(".carousel-container");
 
-btnLeft.addEventListener("click", () => {
-  const testimonialCards = [...carouselContainer.querySelectorAll(".carousel-card")];
+btnLeft.addEventListener("click", moveLeft);
 
-  const leftCard = carouselContainer.querySelector(".left");
-  const midCard = carouselContainer.querySelector(".middle");
-  const rightCard = carouselContainer.querySelector(".right");
+btnRight.addEventListener("click", moveRight);
 
-  let nextCard = testimonialCards.indexOf(rightCard) + 1;
-
-  nextCard = nextCard > testimonialCards.length - 1 ? 0 : nextCard;
-
-  leftCard.classList.remove("left");
-
-  midCard.classList.remove("middle");
-  midCard.classList.add("left");
-
-  rightCard.classList.remove("right");
-  rightCard.classList.add("middle");
-
-  testimonialCards[nextCard].classList.add("right");
-});
-
-btnRight.addEventListener("click", () => {
+function moveLeft() {
   const testimonialCards = [...carouselContainer.querySelectorAll(".carousel-card")];
 
   const leftCard = carouselContainer.querySelector(".left");
@@ -51,4 +33,26 @@ btnRight.addEventListener("click", () => {
   rightCard.classList.remove("right");
 
   testimonialCards[nextCard].classList.add("left");
-});
+}
+
+function moveRight() {
+  const testimonialCards = [...carouselContainer.querySelectorAll(".carousel-card")];
+
+  const leftCard = carouselContainer.querySelector(".left");
+  const midCard = carouselContainer.querySelector(".middle");
+  const rightCard = carouselContainer.querySelector(".right");
+
+  let nextCard = testimonialCards.indexOf(rightCard) + 1;
+
+  nextCard = nextCard > testimonialCards.length - 1 ? 0 : nextCard;
+
+  leftCard.classList.remove("left");
+
+  midCard.classList.remove("middle");
+  midCard.classList.add("left");
+
+  rightCard.classList.remove("right");
+  rightCard.classList.add("middle");
+
+  testimonialCards[nextCard].classList.add("right");
+}
