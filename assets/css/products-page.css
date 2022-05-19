@@ -1,0 +1,38 @@
+/* Other */
+body {
+  background-image: linear-gradient(to bottom right, #FFF, #F3F4EE);
+}
+
+/* Small nav edits */
+
+.mobile-nav-toggle div {
+  background-color: #000;
+}
+
+@media (min-width: 44.625rem) {
+  .nav-sections a,
+  .login-options a {
+    color: #171717;
+  }
+
+  .active::after {
+    background-color: #171717;
+  }
+
+  .login-options .filled-btn:hover {
+    color: #171717;
+  }
+}
+
+main {
+  height: 100vh;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+}
+
+.shopping-cart {
+  filter: brightness(0);
+}
