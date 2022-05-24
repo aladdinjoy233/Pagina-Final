@@ -38,6 +38,7 @@ body {
 .content h2 {
   font-size: 2.5rem;
   font-weight: var(--fw-black);
+  line-height: 2.5rem;
 }
 
 .products-container {
@@ -98,10 +99,18 @@ body {
   height: 100%;
   background-color: #000000;
   opacity: .90;
-  transition: 550ms ease;
+  transition: 750ms ease;
   text-align: center;
   padding: 1rem;
   color: var(--c-text-light);
+}
+
+.products-container > li .product-desc h4 {
+  font-size: 1.5rem;
+}
+
+.products-container > li .product-desc p {
+  max-width: 20rem;
 }
 
 .phone .product-img {
@@ -129,20 +138,20 @@ body {
 
 @media (max-width: 42rem) {
   .phone .product-img {
-    width: 8rem;
+    width: 6rem;
   }
   .laptop .product-img {
     width: 12rem;
   }
   .console .product-img {
-    width: 15rem;
+    width: 12rem;
   }
   .fridge .product-img {
     width: 8rem;
   }
 }
 
-@media (max-width: 35rem) {
+/* @media (max-width: 35rem) {
   .phone .product-img {
     width: 5rem;
   }
@@ -155,9 +164,9 @@ body {
   .fridge .product-img {
     width: 7rem;
   }
-}
+} */
 
-@media (max-width: 25rem) {
+@media (max-width: 35rem) {
   .products-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
