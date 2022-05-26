@@ -1,0 +1,60 @@
+body {
+  background-color: var(--c-text-white);
+}
+
+/* Nav edit */
+.mobile-nav-toggle div {
+  background-color: #000;
+}
+
+@media (min-width: 44.625rem) {
+  .nav-sections a,
+  .login-options a {
+    color: #171717;
+  }
+
+  .active::after {
+    background-color: #171717;
+  }
+
+  .login-options .filled-btn:hover {
+    color: #171717;
+  }
+}
+
+.nav-sections::after {
+  display: none;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.options > li {
+  color: #6e6e6e;
+  cursor: pointer;
+  padding: .5rem 1rem;
+}
+
+.options > li:hover {
+  opacity: .75;
+}
+
+.options .active-option {
+  color: white;
+}
+
+.highlight {
+  transition: all 200ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 10px;
+  display: block;
+  background-color: #171717;
+}

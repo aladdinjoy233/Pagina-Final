@@ -1,4 +1,4 @@
-/* === Smooth page transitions */
+/* === Smooth page transitions ===*/
 let links = document.querySelectorAll('a');
 
 
@@ -18,6 +18,7 @@ if (links) {
           } else {
             window.location = e.srcElement.parentElement.href;
           }
+
         } else {
 
           console.log("whoops", e.srcElement);
