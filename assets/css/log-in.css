@@ -148,14 +148,63 @@ form.sign-in {
   transform: translateX(0) scale(1);
   opacity: 1;
   transition: all 250ms ease;
+  z-index: 0;
 }
 
 .sign-in-active form.log-in{
   transform: translateX(20rem) scale(.5);
   opacity: 0;
+  z-index: -10;
 }
 
 .log-in-active form.sign-in {
   transform: translateX(-20rem) scale(.5);
   opacity: 0;
+  z-index: -10;
+}
+
+.submit-group {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.error-input {
+  border-color: red;
+}
+
+.error-msg {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  color: red;
+}
+
+.password-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-group input {
+  width: 100%;
+}
+
+.password-group .show-pass {
+  color: #3f3f3f;
+  position: absolute;
+  height: 100%;
+  width: 2rem;
+  right: 0;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 100ms ease;
+}
+
+.password-group .show-pass:hover {
+  background-color: #CBCBCB;
 }

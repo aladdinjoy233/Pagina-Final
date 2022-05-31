@@ -45,7 +45,7 @@
 
     <div class="forms">
       <div class="form-container">
-        <form class="sign-in" onsubmit="return false">
+        <form class="sign-in" onsubmit="return validarSign()">
           <div class="input-group-row">
             <div class="input-group">
               <label for="nombre">nombre</label>
@@ -62,9 +62,16 @@
           </div>
           <div class="input-group">
             <label for="sign-contrasenia">contraseña</label>
-            <input type="text" name="contrasenia" id="sign-contrasenia">
+            <div class="password-group">
+              <input type="password" name="contrasenia" id="sign-contrasenia">
+              <div class="show-pass">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+            </div>
           </div>
-          <input type="submit" value="sign-in">
+          <div class="submit-group">
+            <input type="submit" value="sign-in">
+          </div>
         </form>
       </div>
       <div class="form-container">
@@ -75,9 +82,16 @@
           </div>
           <div class="input-group">
             <label for="log-contrasenia">contraseña</label>
-            <input type="text" name="contrasenia" id="log-contrasenia">
+            <div class="password-group">
+              <input type="password" name="contrasenia" id="log-contrasenia">
+              <div class="show-pass">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+            </div>
           </div>
-          <input type="submit" value="log-in">
+          <div class="submit-group">
+            <input type="submit" value="log-in">
+          </div>
         </form>
       </div>
     </div>
