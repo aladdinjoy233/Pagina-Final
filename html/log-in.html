@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../assets/css/log-in.css">
   <script src="../assets/js/nav.js" defer></script>
   <script src="../assets/js/log-in-highlight.js" defer></script>
+  <script src="../assets/js/validar-formulario.js" defer></script>
   <title>sign-in</title>
 </head>
 
@@ -35,12 +36,52 @@
     </div>
   </nav>
 
-  <section class="container">
+  <section class="container forms-container sign-in-active">
 
     <ul class="options">
       <li class="active-option">sign-in</li>
       <li>log-in</li>
     </ul>
+
+    <div class="forms">
+      <div class="form-container">
+        <form class="sign-in" onsubmit="return false">
+          <div class="input-group-row">
+            <div class="input-group">
+              <label for="nombre">nombre</label>
+              <input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="input-group">
+              <label for="apellido">apellido</label>
+              <input type="text" name="apellido" id="apellido">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="sign-email">e-mail</label>
+            <input type="text" name="email" id="sign-email">
+          </div>
+          <div class="input-group">
+            <label for="sign-contrasenia">contraseña</label>
+            <input type="text" name="contrasenia" id="sign-contrasenia">
+          </div>
+          <input type="submit" value="sign-in">
+        </form>
+      </div>
+      <div class="form-container">
+        <form class="log-in" onsubmit="return false">
+          <div class="input-group">
+            <label for="log-email">e-mail</label>
+            <input type="text" name="email" id="log-email">
+          </div>
+          <div class="input-group">
+            <label for="log-contrasenia">contraseña</label>
+            <input type="text" name="contrasenia" id="log-contrasenia">
+          </div>
+          <input type="submit" value="log-in">
+        </form>
+      </div>
+    </div>
+
 
   </section>
 
