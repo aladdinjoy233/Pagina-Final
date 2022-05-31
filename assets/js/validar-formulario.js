@@ -69,6 +69,7 @@ function signIn() {
   localStorage.setItem("apellido", form.apellido.value.trim());
   localStorage.setItem("email", form.email.value.trim());
   localStorage.setItem("contrasenia", form.contrasenia.value.trim());
+  localStorage.setItem("isLoggedIn", true);
   window.location.href = "../index.html";
 }
 

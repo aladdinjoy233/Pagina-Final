@@ -496,3 +496,65 @@ footer .footer-social-links a:hover {
     opacity: .50;
   }
 }
+
+/* User navigation */
+.login-options .user {
+  color: var(--c-text-white);
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-options .user:hover {
+  text-decoration: none;
+}
+
+.login-options .user .user-options {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 175%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: .5rem;
+  background-color: white;
+  box-shadow: 0px 15px 64px 1px rgba(0, 0, 0, .1);
+  border-radius: 7px;
+  transition: 150ms ease;
+  padding: 1rem .5rem;
+}
+
+.login-options .user .user-options > div {
+  color: #171717;
+}
+
+.login-options .user .user-options > div:hover {
+  color: #ACACAC;
+}
+
+.login-options .user:hover .user-options {
+  visibility: visible;
+  opacity: 1;
+}
+
+.login-options .user .user-options:before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+@media (max-width: 44.5625rem) {
+  .login-options .user {
+    color: #000;
+  }
+}
