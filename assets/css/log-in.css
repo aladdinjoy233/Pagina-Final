@@ -176,7 +176,7 @@ form.sign-in {
 .error-msg {
   display: inline-flex;
   align-items: center;
-  gap: .25rem;
+  gap: .5rem;
   color: red;
 }
 
