@@ -25,4 +25,9 @@ if (document.querySelector('.user-options') != null) {
     localStorage.setItem("isLoggedIn", false);
     document.location.reload();
   })
+
+  deleteAccountBtn.addEventListener("click", () => {
+    localStorage.clear();
+    document.location.reload();
+  })
 }
