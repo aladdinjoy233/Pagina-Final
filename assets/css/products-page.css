@@ -151,21 +151,6 @@ body {
   }
 }
 
-/* @media (max-width: 35rem) {
-  .phone .product-img {
-    width: 5rem;
-  }
-  .laptop .product-img {
-    width: 9rem;
-  }
-  .console .product-img {
-    width: 10rem;
-  }
-  .fridge .product-img {
-    width: 7rem;
-  }
-} */
-
 @media (max-width: 35rem) {
   .products-container {
     grid-template-columns: repeat(1, 1fr);

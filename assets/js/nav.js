@@ -5,7 +5,7 @@ const navOptions = document.querySelector('.login-options');
 
 navToggle.addEventListener("click", () => navMenu.classList.toggle("open"));
 
-if (localStorage.getItem("isLoggedIn")) {
+if (localStorage.getItem("isLoggedIn") == "true") {
   navOptions.innerHTML = `
   <li class="user">
     ${localStorage.getItem("nombre")} ${localStorage.getItem("apellido")}
@@ -15,7 +15,14 @@ if (localStorage.getItem("isLoggedIn")) {
     </div>
   </li>
   `;
-} else {
-  // navOptions.innerHTML = navBtns;
-  console.log(localStorage.getItem("isLoggedIn"));
+}
+
+if (document.querySelector('.user-options') != null) {
+  const logOutBtn = document.querySelector(".log-out");
+  const deleteAccountBtn = document.querySelector(".delete-acc");
+
+  logOutBtn.addEventListener("click", () => {
+    localStorage.setItem("isLoggedIn", false);
+    document.location.reload();
+  })
 }
