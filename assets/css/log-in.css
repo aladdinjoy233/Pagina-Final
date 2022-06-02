@@ -1,6 +1,6 @@
 body {
   background-color: var(--c-text-white);
-  overflow: hidden;
+  overflow-x: hidden;
   min-height: 100vh;
   position: relative;
 }
@@ -81,7 +81,7 @@ body::after {
 .input-group-row {
   display: flex;
   flex-direction: row;
-  gap: 4rem;
+  justify-content: space-between;
 }
 
 .input-group {
@@ -118,7 +118,7 @@ input {
 }
 
 input[type="submit"] {
-  align-self: flex-start;
+  justify-self: flex-start;
   border: 2px solid #171717;
   padding: .5rem 1rem;
   background-color: #171717;
@@ -276,4 +276,40 @@ form.sign-in {
 
 .datos-card h3 {
   margin-bottom: .5rem;
+}
+
+@media (max-width: 34.375rem) {
+  .input-group-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 23.125rem) {
+  .form-container form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 21rem) {
+  .submit-group {
+    flex-direction: column-reverse;
+  }
+
+  input[type="submit"] {
+    justify-self: center;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 19rem) {
+  input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 17rem) {
+  .options {
+    flex-direction: column;
+  }
 }
