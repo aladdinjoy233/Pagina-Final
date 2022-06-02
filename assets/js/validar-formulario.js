@@ -133,3 +133,27 @@ showPass.forEach(btn => btn.addEventListener('click', () => {
 
 }))
 
+// Olvido contraseña
+const forgetBtn = document.querySelector('.forgot-password');
+const datosCard = document.querySelector('.datos-card');
+
+if (localStorage.getItem("nombre") != null) {
+  datosCard.innerHTML += `
+    <p>Nombre: ${localStorage.getItem("nombre")}</p>
+    <p>Apellido: ${localStorage.getItem("apellido")}</p>
+    <p>Email: ${localStorage.getItem("email")}</p>
+    <p>Contaseña: ${localStorage.getItem("contrasenia")}</p>
+  `;
+} else {
+  datosCard.innerHTML += "<p>No hay una cuenta registrada en la pagina</p>";
+}
+
+forgetBtn.addEventListener('click', () => mostrarCartel());
+
+function mostrarCartel() {
+  document.body.classList.add("show-overlay");
+}
+
+function esconderCartel() {
+  document.body.classList.remove("show-overlay");
+}
