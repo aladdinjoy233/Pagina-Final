@@ -668,6 +668,7 @@ main .desc h2::after {
 }
 
 /* Fridge section */
+/* -- Fridge underline */
 .fridge-section .desc h2 {
   position: relative;
 }
@@ -714,8 +715,81 @@ main .desc h2::after {
   }
 }
 
-/* Game section */
+/* -- Fridge dots */
+.fridge-section .fridge-img {
+  position: relative;
+}
 
+.fridge-section .fridge-img::after {
+  content: "";
+  position: absolute;
+  bottom: -4rem;
+  right: -1rem;
+  width: 10rem;
+  height: 10rem;
+  background-image: url("../img/site-accents/dots-white.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -10;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .fridge-section .fridge-img::after {
+    background-image: url("../img/site-accents/dots-black.svg");
+    width: 4.5rem;
+    height: 4.5rem;
+    bottom: -1rem;
+    left: -2rem;
+  }
+
+  .fridge-section .fridge-img::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    transform: rotate(45deg);
+    background-image: url("../img/site-accents/dots-black.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -10;
+  }
+}
+
+/* Phone section */
+/* -- Phone dots */
+.phone-section .phone-img {
+  position: relative;
+  z-index: 10;
+}
+
+.phone-section .phone-img::after {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  left: -4rem;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(45deg);
+  background-image: url("../img/site-accents/dots-white.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -10;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .phone-section .phone-img::after {
+    width: 4.5rem;
+    height: 4.5rem;
+    left: initial;
+    right: -2rem;
+    bottom: 0;
+  }
+}
+
+/* Game section */
+/* -- Game underline */
 .game-section .desc h2 {
   position: relative;
   line-height: 4.5rem;
@@ -782,7 +856,40 @@ main .desc h2::after {
   }
 }
 
+/* -- Game dots */
+.game-section .game-img {
+  position: relative;
+  z-index: 10;
+}
+
+.game-section .game-img::after {
+  content: "";
+  position: absolute;
+  right: 3rem;
+  bottom: 7rem;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(45deg);
+  background-image: url("../img/site-accents/dots-black.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -10;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .game-section .game-img::after {
+    right: initial;
+    left: -1rem;
+    bottom: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+
+
 /* Testimonial section */
+/* -- Testimonial underline */
 .testimonials-section .desc h2 {
   position: relative;
 }
@@ -837,6 +944,42 @@ main .desc h2::after {
     transform: translateX(50%);
   }
 }
+
+
+/* -- Testimonial dots */
+.testimonials-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::after {
+  content: "";
+  position: absolute;
+  right: 2rem;
+  bottom: 4rem;
+  width: 7rem;
+  height: 7rem;
+  transform: rotate(45deg);
+  background-image: url("../img/site-accents/dots-grey.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -10;
+  opacity: .5;
+}
+
+@media only screen and (max-width: 58rem) {
+  .testimonials-section::after {
+    right: -5rem;
+  }
+}
+
+@media only screen and (max-width: 32rem) {
+  .testimonials-section::after {
+    bottom: 0;
+  }
+}
+
+
 
 /* Contact form section */
 .contact-section form {
