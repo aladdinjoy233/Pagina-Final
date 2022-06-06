@@ -353,7 +353,7 @@ main .desc .btn-group .outline-btn {
 /* == Small Laptop / Tablet == */
 /* - Navigation */
 /* - Main Section */
-@media (min-width: 44.625rem) {
+@media only screen and (min-width: 44.625rem) {
 
   /* ========== Main Section ========== */
   header {
@@ -521,7 +521,7 @@ main .desc .btn-group .outline-btn {
 }
 
 /* X -Diagonal */
-@media (min-width: 46.875rem) {
+@media only screen and (min-width: 46.875rem) {
   .page-content::before {
     top: 0;
     left: -16rem;
@@ -529,7 +529,7 @@ main .desc .btn-group .outline-btn {
 }
 
 /* X -Diagonal */
-@media (min-width: 60rem) {
+@media only screen and (min-width: 60rem) {
   .page-content::before {
     top: 0;
     left: -6rem;
@@ -537,7 +537,7 @@ main .desc .btn-group .outline-btn {
 }
 
 /* X -Diagonal */
-@media (min-width: 75rem) {
+@media only screen and (min-width: 75rem) {
   .page-content::before {
     top: -10rem;
     left: -5rem;
@@ -545,7 +545,7 @@ main .desc .btn-group .outline-btn {
 }
 
 /* X -Diagonal */
-@media (min-width: 101rem) {
+@media only screen and (min-width: 101rem) {
   .page-content::before {
     top: -10rem;
     left: 8rem;
@@ -553,7 +553,7 @@ main .desc .btn-group .outline-btn {
 }
 
 /* X -Diagonal */
-@media (min-width: 126rem) {
+@media only screen and (min-width: 126rem) {
   .page-content::before {
     top: -20rem;
     left: 16rem;
@@ -561,7 +561,7 @@ main .desc .btn-group .outline-btn {
 }
 
 /* X -Diagonal */
-@media (min-width: 162.5rem) {
+@media only screen and (min-width: 162.5rem) {
   .page-content::before {
     top: -25rem;
     left: 25rem;
@@ -569,16 +569,20 @@ main .desc .btn-group .outline-btn {
 }
 
 /* - Container */
-@media (min-width: 102.5rem) {
+@media only screen and (min-width: 102.5rem) {
 
   /* Helper */
   .container {
     padding: 0;
   }
+
+  .testimonials-section {
+    padding-bottom: 6rem;
+  }
 }
 
 /* - Main Section */
-@media (min-width: 75rem) {
+@media only screen and (min-width: 75rem) {
   header {
     height: 100vh;
   }
@@ -602,7 +606,7 @@ main .desc .btn-group .outline-btn {
 
 
 /* == Smaller - Mobile == */
-@media (max-width: 28.125rem) {
+@media only screen and (max-width: 28.125rem) {
 
   .fridge-section .desc h2,
   .phone-section .desc h2,
@@ -617,7 +621,7 @@ main .desc .btn-group .outline-btn {
   }
 }
 
-@media (max-width: 20rem) {
+@media only screen and (max-width: 20rem) {
 
   .game-section .game-img {
     width: 15rem;
@@ -629,8 +633,231 @@ main .desc .btn-group .outline-btn {
   }
 }
 
-@media (max-width: 17rem) {
+@media only screen and (max-width: 17rem) {
   main .desc .btn-group {
     flex-direction: column;
+  }
+}
+
+/* === ✨Accents✨ === */
+/* Header section */
+main .desc h2 {
+  position: relative;
+}
+
+main .desc h2::after {
+  content: "";
+  position: absolute;
+
+  right: 1.85rem;
+  bottom: -1.75rem;
+  width: 4rem;
+
+  height: 2rem;
+  background-image: url("../img/site-accents/underline-grey.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (min-width: 74.9375rem) {
+  main .desc h2::after {
+    right: 2.75rem;
+    bottom: -1.75rem;
+    width: 5rem;
+  }
+}
+
+/* Fridge section */
+.fridge-section .desc h2 {
+  position: relative;
+}
+
+.fridge-section .desc h2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  width: 17rem;
+  height: 2rem;
+  background-image: url("../img/site-accents/underline-light.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .fridge-section .desc h2::after {
+    bottom: -1.5rem;
+  }
+}
+
+@media only screen and (max-width: 37.6875rem) {
+  .fridge-section .desc h2::after {
+    right: 50%;
+    transform: translateX(50%);
+    width: 19rem;
+  }
+}
+
+@media only screen and (max-width: 28.125rem) {
+  .fridge-section .desc h2::after {
+    right: -0.75rem;
+    bottom: -1.95rem;
+    width: 12rem;
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 24.125rem) {
+  .fridge-section .desc h2::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* Game section */
+
+.game-section .desc h2 {
+  position: relative;
+  line-height: 4.5rem;
+}
+
+.game-section .desc h2::after {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  right: 6.5rem;
+  width: 10rem;
+  height: 2rem;
+  background-image: url("../img/site-accents/underline-yellow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .game-section .desc h2::after {
+    background-image: url("../img/site-accents/underline-light.svg");
+    right: initial;
+    left: 0;
+    top: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 38.125rem) {
+  .game-section .desc h2::after {
+    left: 35%;
+    transform: translateX(-50%);
+  }
+}
+
+@media only screen and (max-width: 28.125rem) {
+  .game-section .desc h2::after {
+    transform: translateX(0);
+    left: -0.5rem;
+    top: 4rem;
+    width: 6.5rem;
+  }
+}
+
+@media only screen and (max-width: 24.375rem) {
+  .game-section .desc h2 {
+    line-height: 3.5rem;
+  }
+  
+  .game-section .desc h2::after {
+    width: 7rem;
+    left: 37%;
+    transform: translateX(-50%);
+    top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 14.375rem) {
+  .game-section .desc h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .game-section .desc h2 {
+    line-height: 3rem;
+  }
+}
+
+/* Testimonial section */
+.testimonials-section .desc h2 {
+  position: relative;
+}
+
+.testimonials-section .desc h2::after {
+  content: "";
+  position: absolute;
+  bottom: -1.75rem;
+  right: 2.25rem;
+  width: 13rem;
+  height: 2rem;
+  background-image: url("../img/site-accents/underline-light.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .testimonials-section .desc h2::after{
+    right: 50%;
+    transform: translateX(135%);
+  }
+}
+
+@media only screen and (max-width: 38.875rem) {
+  .testimonials-section .desc h2::after{
+    transform: translateX(50%);
+  }
+}
+
+@media only screen and (max-width: 28.5625rem) {
+  .testimonials-section .desc h2::after{
+    transform: translateX(68%);
+  }
+}
+
+@media only screen and (max-width: 28.125rem) {
+  .testimonials-section .desc h2::after{
+    transform: translateX(50%);
+    bottom: -1.75rem;
+    width: 11rem;
+  }
+}
+
+@media only screen and (max-width: 22.375rem) {
+  .testimonials-section .desc h2::after{
+    transform: translateX(68%);
+  }
+}
+
+@media only screen and (max-width: 16.875rem) {
+  .testimonials-section .desc h2::after{
+    transform: translateX(50%);
+  }
+}
+
+/* Contact form section */
+.contact-section form {
+  position: relative;
+}
+
+.contact-section form::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-28rem, -60%);
+  width: 15rem;
+  height: 15rem;
+  background-image: url("../img/site-accents/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width: 41rem) {
+  .contact-section form::after {
+    display: none;
   }
 }

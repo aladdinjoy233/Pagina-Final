@@ -10,7 +10,7 @@ body {
   background-color: #000;
 }
 
-@media (min-width: 44.625rem) {
+@media only screen and (min-width: 44.625rem) {
   .nav-sections a,
   .login-options a {
     color: #171717;
@@ -126,7 +126,7 @@ body {
   width: 12rem;
 }
 
-@media (max-width: 48rem) {
+@media only screen and (max-width: 48rem) {
   .products-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -136,7 +136,7 @@ body {
   }
 }
 
-@media (max-width: 42rem) {
+@media only screen and (max-width: 42rem) {
   .phone .product-img {
     width: 6rem;
   }
@@ -151,7 +151,7 @@ body {
   }
 }
 
-@media (max-width: 35rem) {
+@media only screen and (max-width: 35rem) {
   .products-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -165,4 +165,30 @@ body {
 
 .login-options .user {
   color: #171717;
+}
+
+/* Accents */
+.content h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.content h2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1.65rem;
+  width: 11rem;
+  height: 100%;
+  background-image: url("../img/site-accents/underline-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 24.9375rem) {
+  .content h2::after{
+    left: 0;
+    bottom: -3.25rem;
+  }
 }

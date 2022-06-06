@@ -308,7 +308,7 @@ nav.open .mobile-nav-toggle .bot {
 }
 
 /* Nav mediaqueries */
-@media (min-width: 44.625rem) {
+@media only screen and (min-width: 44.625rem) {
   /* ========== Navigation ========== */
   .nav-menu {
     display: flex;
@@ -439,7 +439,7 @@ footer .footer-social-links a:hover {
 }
 
 /* Footer mediaqueries */
-@media (min-width: 53.125rem) {
+@media only screen and (min-width: 53.125rem) {
   footer {
     background-image: linear-gradient(to bottom right, #171717, var(--c-gradient-right));
   }
@@ -553,7 +553,7 @@ footer .footer-social-links a:hover {
   z-index: -10;
 }
 
-@media (max-width: 44.5625rem) {
+@media only screen and (max-width: 44.5625rem) {
   .login-options .user {
     color: #000;
   }
