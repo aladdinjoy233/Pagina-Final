@@ -57,6 +57,19 @@ body::after {
   color: #6e6e6e;
   cursor: pointer;
   padding: .5rem 1rem;
+  border-radius: 10px;
+  background-size: 200%;
+  transition: background-position 250ms ease, color 100ms ease;
+}
+
+.options > li:first-child {
+  background-image: linear-gradient(to right, transparent 50%, #171717 50%);
+  background-position: left;
+}
+
+.options > li:nth-child(2) {
+  background-image: linear-gradient(to left, transparent 50%, #171717 50%);
+  background-position: right;
 }
 
 .options > li:hover {
@@ -67,15 +80,12 @@ body::after {
   color: white;
 }
 
-.highlight {
-  transition: all 200ms;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: 10px;
-  display: block;
-  background-color: #171717;
+.options > li:first-child.active-option {
+  background-position: right;
+}
+
+.options > li:nth-child(2).active-option {
+  background-position: left;
 }
 
 .input-group-row {
