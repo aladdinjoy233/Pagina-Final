@@ -159,6 +159,8 @@ main .desc .btn-group .outline-btn {
   align-items: center;
   flex-direction: column;
   padding-bottom: 6rem;
+
+  overflow: hidden;
 }
 
 .testimonials-section .desc {
@@ -641,6 +643,7 @@ main .desc .btn-group .outline-btn {
 
 /* === ✨Accents✨ === */
 /* Header section */
+/* -- Header underline */
 main .desc h2 {
   position: relative;
 }
@@ -664,6 +667,48 @@ main .desc h2::after {
     right: 2.75rem;
     bottom: -1.75rem;
     width: 5rem;
+  }
+}
+
+/* -- Header accents */
+main.container {
+  position: relative;
+  z-index: 1;
+}
+
+main.container::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background-image: url("../img/site-accents/header-accent.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  main.container::after {
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 28.75rem) {
+  main.container::after {
+    transform: translateX(-39%);
+    width: 35rem;
+  }
+}
+@media only screen and (max-width: 20rem) {
+  main.container::after {
+    /* transform: translateX(-39%); */
+    top: 15rem;
+    width: 29rem;
   }
 }
 
@@ -757,6 +802,52 @@ main .desc h2::after {
   }
 }
 
+/* -- Fridge accents */
+.fridge-section {
+  position: relative;
+  z-index: 1;
+}
+
+.fridge-section::after {
+  content: "";
+  position: absolute;
+  top: 11rem;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("../img/site-accents/header-accent.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 60rem) {
+  .fridge-section::after {
+    top: 15rem;
+  }
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .fridge-section::after {
+    right: 50%;
+    transform: translateX(50%);
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 40rem) {
+  .fridge-section::after {
+    top: 26rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 21.875rem) {
+  .fridge-section::after {
+    top: 33rem;
+  }
+}
+
 /* Phone section */
 /* -- Phone dots */
 .phone-section .phone-img {
@@ -785,6 +876,40 @@ main .desc h2::after {
     left: initial;
     right: -2rem;
     bottom: 0;
+  }
+}
+
+/* --Phone accents */
+.phone-section {
+  position: relative;
+  z-index: 1;
+}
+
+.phone-section::after {
+  content: "";
+  position: absolute;
+  top: 11rem;
+  left: 2rem;
+  width: 55%;
+  height: 25rem;
+  background-image: url("../img/site-accents/header-accent.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .phone-section::after {
+    top: 16rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 21.25rem) {
+  .phone-section::after {
+    top: 20rem;
   }
 }
 
@@ -886,6 +1011,40 @@ main .desc h2::after {
   }
 }
 
+/* -- Game accents */
+.game-section {
+  position: relative;
+  z-index: 1;
+}
+
+.game-section::after {
+  content: "";
+  position: absolute;
+  top: 15rem;
+  right: 0rem;
+  width: 55%;
+  height: 25rem;
+  background-image: url("../img/site-accents/header-accent.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 44.5625rem) {
+  .game-section::after {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%) scaleX(-1);
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 28.75rem) {
+  .game-section::after {
+    top: 8rem;
+  }
+}
 
 
 /* Testimonial section */
@@ -945,37 +1104,28 @@ main .desc h2::after {
   }
 }
 
-
-/* -- Testimonial dots */
+/* -- Testimonial accents */
 .testimonials-section {
-  position: relative;
-  overflow: hidden;
+  z-index: 1;
 }
 
 .testimonials-section::after {
   content: "";
   position: absolute;
-  right: 2rem;
-  bottom: 4rem;
-  width: 7rem;
-  height: 7rem;
-  transform: rotate(45deg);
-  background-image: url("../img/site-accents/dots-grey.svg");
+  top: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 55%;
+  height: 25rem;
+  background-image: url("../img/site-accents/testimonial-accent.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: -10;
-  opacity: .5;
+  z-index: -1;
 }
 
-@media only screen and (max-width: 58rem) {
+@media only screen and (max-width: 44.5625rem) {
   .testimonials-section::after {
-    right: -5rem;
-  }
-}
-
-@media only screen and (max-width: 32rem) {
-  .testimonials-section::after {
-    bottom: 0;
+    display: none;
   }
 }
 
